@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HMHouseListViewController.swift
 //  House Management
 //
 //  Created by Vikasmishra on 10/04/19.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HMHouseListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
-
