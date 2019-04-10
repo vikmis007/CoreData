@@ -100,11 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				B23F3368225DBA3800BC7FB0 /* AppDelegate.swift */,
-				B23F336A225DBA3800BC7FB0 /* ViewController.swift */,
-				B23F336C225DBA3800BC7FB0 /* Main.storyboard */,
-				B23F3372225DBA3900BC7FB0 /* Assets.xcassets */,
-				B23F3374225DBA3900BC7FB0 /* LaunchScreen.storyboard */,
-				B23F3377225DBA3900BC7FB0 /* Info.plist */,
+				B23F3399225DBB4200BC7FB0 /* ViewController */,
+				B23F339A225DBB5400BC7FB0 /* Storybaord */,
+				B23F339B225DBB6000BC7FB0 /* Resources */,
 				B23F336F225DBA3800BC7FB0 /* House_Management.xcdatamodeld */,
 			);
 			path = "House Management";
@@ -126,6 +124,32 @@
 				B23F338D225DBA3900BC7FB0 /* Info.plist */,
 			);
 			path = "House ManagementUITests";
+			sourceTree = "<group>";
+		};
+		B23F3399225DBB4200BC7FB0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B23F336A225DBA3800BC7FB0 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B23F339A225DBB5400BC7FB0 /* Storybaord */ = {
+			isa = PBXGroup;
+			children = (
+				B23F336C225DBA3800BC7FB0 /* Main.storyboard */,
+				B23F3374225DBA3900BC7FB0 /* LaunchScreen.storyboard */,
+			);
+			path = Storybaord;
+			sourceTree = "<group>";
+		};
+		B23F339B225DBB6000BC7FB0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B23F3372225DBA3900BC7FB0 /* Assets.xcassets */,
+				B23F3377225DBA3900BC7FB0 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,7 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGVV4YCSE8;
-				INFOPLIST_FILE = "House Management/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/House Management/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.exercise.House-Management";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -456,7 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NGVV4YCSE8;
-				INFOPLIST_FILE = "House Management/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/House Management/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.exercise.House-Management";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
