@@ -23,7 +23,7 @@
                     <navigationItem key="navigationItem" title="Houses" id="YTH-3o-bYv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Ks-8D-Omp">
                             <connections>
-                                <segue destination="z15-Mg-WUV" kind="presentation" id="7vf-Da-OKQ"/>
+                                <segue destination="z15-Mg-WUV" kind="presentation" identifier="HouseListToAddHouseIdentifier" id="7vf-Da-OKQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -45,8 +45,7 @@
                     <navigationItem key="navigationItem" title="Persons" id="N0L-4O-1Br">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Gd-H1-wgP">
                             <connections>
-                                <action selector="addPerson:" destination="tiv-Um-ero" id="pSW-hJ-7rm"/>
-                                <segue destination="z15-Mg-WUV" kind="presentation" id="feK-Ga-KC7"/>
+                                <segue destination="z15-Mg-WUV" kind="presentation" identifier="PersonListToAddPersonIdentifier" id="feK-Ga-KC7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -78,7 +77,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JRm-nC-j06">
-                                <rect key="frame" x="0.0" y="66" width="375" height="601"/>
+                                <rect key="frame" x="0.0" y="78" width="375" height="589"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -86,7 +85,7 @@
                         <constraints>
                             <constraint firstItem="uHi-1R-yef" firstAttribute="leading" secondItem="UYa-Yj-ONI" secondAttribute="leading" constant="8" id="Aq0-js-uHP"/>
                             <constraint firstItem="UYa-Yj-ONI" firstAttribute="trailing" secondItem="u0x-b7-7EL" secondAttribute="trailing" constant="8" id="Iu2-Ot-s0y"/>
-                            <constraint firstItem="JRm-nC-j06" firstAttribute="top" secondItem="uHi-1R-yef" secondAttribute="bottom" constant="8" id="Muv-9z-8Ug"/>
+                            <constraint firstItem="JRm-nC-j06" firstAttribute="top" secondItem="uHi-1R-yef" secondAttribute="bottom" constant="20" id="Muv-9z-8Ug"/>
                             <constraint firstItem="JRm-nC-j06" firstAttribute="leading" secondItem="2HC-iM-zE0" secondAttribute="leading" id="cqq-f1-tV9"/>
                             <constraint firstItem="u0x-b7-7EL" firstAttribute="top" secondItem="UYa-Yj-ONI" secondAttribute="top" constant="8" id="dpc-gr-boG"/>
                             <constraint firstItem="UYa-Yj-ONI" firstAttribute="bottom" secondItem="JRm-nC-j06" secondAttribute="bottom" id="kMm-mJ-rdl"/>

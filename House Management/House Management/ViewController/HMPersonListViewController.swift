@@ -16,9 +16,21 @@ class HMPersonListViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    //MARK: - UI Action Methods
-    @IBAction func addPerson(_ sender: Any) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == HMConstants.kPersonListToAddPersonIdentifier {
+            guard let addEntryViewController: HMAddEntryViewController = segue.destination as? HMAddEntryViewController
+                else { return }
+            addEntryViewController.delegate = self
+            addEntryViewController.sourceController = .person
+        }
     }
     
+}
+
+/// COnform to HMAddEntryViewControllerProtocol
+extension HMPersonListViewController: HMAddEntryViewControllerProtocol {
+    
+    func didTapSaveBtn() { }
+    
+    func didTapCancelBtn() { }
 }
