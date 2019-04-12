@@ -24,7 +24,13 @@
 		B23F33AD225DF8D800BC7FB0 /* HMButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23F33AB225DF8D800BC7FB0 /* HMButtonTableViewCell.swift */; };
 		B23F33AE225DF8D800BC7FB0 /* HMButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23F33AC225DF8D800BC7FB0 /* HMButtonTableViewCell.xib */; };
 		B2CBEED2225F226D00BE12F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEED1225F226D00BE12F9 /* CoreDataManager.swift */; };
-		B2CBEED5225F2DDD00BE12F9 /* HMAddEntryControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEED4225F2DDD00BE12F9 /* HMAddEntryControllerViewModel.swift */; };
+		B2CBEED5225F2DDD00BE12F9 /* HMAddEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEED4225F2DDD00BE12F9 /* HMAddEntryViewModel.swift */; };
+		B2CBEEDA2260653300BE12F9 /* HMPersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEED92260653300BE12F9 /* HMPersonListViewModel.swift */; };
+		B2CBEEDC2260668000BE12F9 /* HMPersonDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEEDB2260668000BE12F9 /* HMPersonDBManager.swift */; };
+		B2CBEEDF226066BD00BE12F9 /* HMHouseDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEEDE226066BD00BE12F9 /* HMHouseDBManager.swift */; };
+		B2CBEEE122607CDA00BE12F9 /* HMAddEntryDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEEE022607CDA00BE12F9 /* HMAddEntryDBManager.swift */; };
+		B2CBEEE4226090B200BE12F9 /* HMPersonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEEE2226090B200BE12F9 /* HMPersonListTableViewCell.swift */; };
+		B2CBEEE5226090B200BE12F9 /* HMPersonListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2CBEEE3226090B200BE12F9 /* HMPersonListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +74,13 @@
 		B23F33AB225DF8D800BC7FB0 /* HMButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMButtonTableViewCell.swift; sourceTree = "<group>"; };
 		B23F33AC225DF8D800BC7FB0 /* HMButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMButtonTableViewCell.xib; sourceTree = "<group>"; };
 		B2CBEED1225F226D00BE12F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		B2CBEED4225F2DDD00BE12F9 /* HMAddEntryControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAddEntryControllerViewModel.swift; sourceTree = "<group>"; };
+		B2CBEED4225F2DDD00BE12F9 /* HMAddEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAddEntryViewModel.swift; sourceTree = "<group>"; };
+		B2CBEED92260653300BE12F9 /* HMPersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMPersonListViewModel.swift; sourceTree = "<group>"; };
+		B2CBEEDB2260668000BE12F9 /* HMPersonDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMPersonDBManager.swift; sourceTree = "<group>"; };
+		B2CBEEDE226066BD00BE12F9 /* HMHouseDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMHouseDBManager.swift; sourceTree = "<group>"; };
+		B2CBEEE022607CDA00BE12F9 /* HMAddEntryDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAddEntryDBManager.swift; sourceTree = "<group>"; };
+		B2CBEEE2226090B200BE12F9 /* HMPersonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMPersonListTableViewCell.swift; sourceTree = "<group>"; };
+		B2CBEEE3226090B200BE12F9 /* HMPersonListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMPersonListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,13 +132,14 @@
 			isa = PBXGroup;
 			children = (
 				B23F3368225DBA3800BC7FB0 /* AppDelegate.swift */,
+				B2CBEED3225F227500BE12F9 /* CoreData */,
+				B2CBEEDD2260668700BE12F9 /* DBManager */,
 				B23F336F225DBA3800BC7FB0 /* House_Management.xcdatamodeld */,
 				B23F339B225DBB6000BC7FB0 /* Resources */,
 				B23F339A225DBB5400BC7FB0 /* Storybaord */,
 				B23F3399225DBB4200BC7FB0 /* ViewController */,
-				B23F33A8225DF74500BC7FB0 /* Views */,
-				B2CBEED3225F227500BE12F9 /* CoreData */,
 				B2CBEED6225F2DE200BE12F9 /* ViewModel */,
+				B23F33A8225DF74500BC7FB0 /* Views */,
 			);
 			path = "House Management";
 			sourceTree = "<group>";
@@ -182,10 +195,12 @@
 		B23F33A8225DF74500BC7FB0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B23F33A5225DF73600BC7FB0 /* HMEntryTableViewCell.xib */,
-				B23F33A4225DF73600BC7FB0 /* HMEntryTableViewCell.swift */,
 				B23F33AB225DF8D800BC7FB0 /* HMButtonTableViewCell.swift */,
 				B23F33AC225DF8D800BC7FB0 /* HMButtonTableViewCell.xib */,
+				B23F33A4225DF73600BC7FB0 /* HMEntryTableViewCell.swift */,
+				B23F33A5225DF73600BC7FB0 /* HMEntryTableViewCell.xib */,
+				B2CBEEE2226090B200BE12F9 /* HMPersonListTableViewCell.swift */,
+				B2CBEEE3226090B200BE12F9 /* HMPersonListTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -201,9 +216,20 @@
 		B2CBEED6225F2DE200BE12F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B2CBEED4225F2DDD00BE12F9 /* HMAddEntryControllerViewModel.swift */,
+				B2CBEED4225F2DDD00BE12F9 /* HMAddEntryViewModel.swift */,
+				B2CBEED92260653300BE12F9 /* HMPersonListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B2CBEEDD2260668700BE12F9 /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				B2CBEEDB2260668000BE12F9 /* HMPersonDBManager.swift */,
+				B2CBEEDE226066BD00BE12F9 /* HMHouseDBManager.swift */,
+				B2CBEEE022607CDA00BE12F9 /* HMAddEntryDBManager.swift */,
+			);
+			path = DBManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +339,7 @@
 				B23F33AE225DF8D800BC7FB0 /* HMButtonTableViewCell.xib in Resources */,
 				B23F3376225DBA3900BC7FB0 /* LaunchScreen.storyboard in Resources */,
 				B23F3373225DBA3900BC7FB0 /* Assets.xcassets in Resources */,
+				B2CBEEE5226090B200BE12F9 /* HMPersonListTableViewCell.xib in Resources */,
 				B23F336E225DBA3800BC7FB0 /* Main.storyboard in Resources */,
 				B23F33A7225DF73600BC7FB0 /* HMEntryTableViewCell.xib in Resources */,
 			);
@@ -340,15 +367,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B23F33A3225DF0FD00BC7FB0 /* HMAddEntryViewController.swift in Sources */,
+				B2CBEEDF226066BD00BE12F9 /* HMHouseDBManager.swift in Sources */,
 				B23F339F225DC14500BC7FB0 /* HMPersonListViewController.swift in Sources */,
+				B2CBEEDC2260668000BE12F9 /* HMPersonDBManager.swift in Sources */,
+				B2CBEEDA2260653300BE12F9 /* HMPersonListViewModel.swift in Sources */,
+				B2CBEEE4226090B200BE12F9 /* HMPersonListTableViewCell.swift in Sources */,
 				B23F339D225DC0C400BC7FB0 /* HMTabBarViewController.swift in Sources */,
 				B23F33AD225DF8D800BC7FB0 /* HMButtonTableViewCell.swift in Sources */,
 				B23F3371225DBA3800BC7FB0 /* House_Management.xcdatamodeld in Sources */,
 				B23F33A1225DC15500BC7FB0 /* HMHouseListViewController.swift in Sources */,
-				B2CBEED5225F2DDD00BE12F9 /* HMAddEntryControllerViewModel.swift in Sources */,
+				B2CBEED5225F2DDD00BE12F9 /* HMAddEntryViewModel.swift in Sources */,
 				B23F3369225DBA3800BC7FB0 /* AppDelegate.swift in Sources */,
 				B23F33AA225DF8A500BC7FB0 /* HMConstants.swift in Sources */,
 				B2CBEED2225F226D00BE12F9 /* CoreDataManager.swift in Sources */,
+				B2CBEEE122607CDA00BE12F9 /* HMAddEntryDBManager.swift in Sources */,
 				B23F33A6225DF73600BC7FB0 /* HMEntryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

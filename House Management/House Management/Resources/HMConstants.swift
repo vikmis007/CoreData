@@ -30,6 +30,7 @@ struct HMConstants {
     static let kAge = "age"
     static let kEmail = "email"
     static let kMobile = "mobile"
+    static let kAgeUnit = "Yrs"
     
     ///House related constant
     static let kHouseNo = "houseNo"

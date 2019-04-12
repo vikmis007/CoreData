@@ -39,6 +39,7 @@ class HMEntryTableViewCell: UITableViewCell {
         switch textType {
             case .text:
                 entryTextfield.keyboardType = .default
+                entryTextfield.autocapitalizationType = .words
             case .number:
                 entryTextfield.keyboardType = .numberPad
             case .email:

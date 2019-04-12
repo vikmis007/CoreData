@@ -39,7 +39,19 @@
                     <view key="view" contentMode="scaleToFill" id="eGO-zF-tTm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kLU-S1-3ok">
+                                <rect key="frame" x="8" y="72" width="359" height="538"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kLU-S1-3ok" firstAttribute="top" secondItem="7FG-dj-ObT" secondAttribute="top" constant="8" id="TdM-od-CzR"/>
+                            <constraint firstItem="kLU-S1-3ok" firstAttribute="leading" secondItem="7FG-dj-ObT" secondAttribute="leading" constant="8" id="XJg-oa-f6R"/>
+                            <constraint firstItem="7FG-dj-ObT" firstAttribute="bottom" secondItem="kLU-S1-3ok" secondAttribute="bottom" constant="8" id="hdy-Uj-ucJ"/>
+                            <constraint firstItem="7FG-dj-ObT" firstAttribute="trailing" secondItem="kLU-S1-3ok" secondAttribute="trailing" constant="8" id="m2X-xN-yvm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7FG-dj-ObT"/>
                     </view>
                     <navigationItem key="navigationItem" title="Persons" id="N0L-4O-1Br">
@@ -49,6 +61,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="kLU-S1-3ok" id="AAJ-MV-XLO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUE-Uc-a0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,6 +192,6 @@
         <image name="persons" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7vf-Da-OKQ"/>
+        <segue reference="feK-Ga-KC7"/>
     </inferredMetricsTieBreakers>
 </document>

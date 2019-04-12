@@ -8,17 +8,20 @@
 
 import Foundation
 
-class HMAddEntryControllerViewModel {
+class HMAddEntryViewModel {
+    
+    //DB Manager instance
+    private let dbManager: HMAddEntryDBManager = HMAddEntryDBManager()
     
     var personDict: [String: Any] = [:]
     var houseDict: [String: Any] = [:]
     
-    func addEntryToPersonDB() {
-        CoreDataManager.shared.addPersonObjectToCoreData(personDict)
+    func savePersonData() {
+        dbManager.addEntryToPersonDB(with: personDict)
     }
     
-    func addEntryToHouseDB() {
-        CoreDataManager.shared.addHouseObjectToCoreData(houseDict)
+    func saveHouseData() {
+        dbManager.addEntryToHouseDB(with: houseDict)
     }
     
 }

@@ -32,7 +32,7 @@ class HMAddEntryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //View Model instance
-    private let viewModel: HMAddEntryControllerViewModel = HMAddEntryControllerViewModel()
+    private let viewModel: HMAddEntryViewModel = HMAddEntryViewModel()
     
     ///DI Property
     weak var delegate: HMAddEntryViewControllerProtocol?
@@ -52,9 +52,9 @@ class HMAddEntryViewController: UIViewController {
         view.endEditing(true)
         
         if sourceController == .person {
-            viewModel.addEntryToPersonDB()
+            viewModel.savePersonData()
         } else {
-            viewModel.addEntryToHouseDB()
+            viewModel.saveHouseData()
         }
         
         delegate?.didTapSaveBtn()

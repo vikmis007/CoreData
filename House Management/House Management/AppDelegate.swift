@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory.userDomainMask, true)
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         return true
     }
 
