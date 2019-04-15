@@ -23,6 +23,9 @@
 		B23F33AA225DF8A500BC7FB0 /* HMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23F33A9225DF8A500BC7FB0 /* HMConstants.swift */; };
 		B23F33AD225DF8D800BC7FB0 /* HMButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23F33AB225DF8D800BC7FB0 /* HMButtonTableViewCell.swift */; };
 		B23F33AE225DF8D800BC7FB0 /* HMButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23F33AC225DF8D800BC7FB0 /* HMButtonTableViewCell.xib */; };
+		B29E77AB22645B97007DEEC3 /* HMHouseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E77AA22645B97007DEEC3 /* HMHouseListViewModel.swift */; };
+		B29E77AF22645E57007DEEC3 /* HMHouseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29E77AD22645E57007DEEC3 /* HMHouseListTableViewCell.swift */; };
+		B29E77B022645E57007DEEC3 /* HMHouseListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29E77AE22645E57007DEEC3 /* HMHouseListTableViewCell.xib */; };
 		B2CBEED2225F226D00BE12F9 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEED1225F226D00BE12F9 /* CoreDataManager.swift */; };
 		B2CBEED5225F2DDD00BE12F9 /* HMAddEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEED4225F2DDD00BE12F9 /* HMAddEntryViewModel.swift */; };
 		B2CBEEDA2260653300BE12F9 /* HMPersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEED92260653300BE12F9 /* HMPersonListViewModel.swift */; };
@@ -73,6 +76,9 @@
 		B23F33A9225DF8A500BC7FB0 /* HMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMConstants.swift; sourceTree = "<group>"; };
 		B23F33AB225DF8D800BC7FB0 /* HMButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMButtonTableViewCell.swift; sourceTree = "<group>"; };
 		B23F33AC225DF8D800BC7FB0 /* HMButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMButtonTableViewCell.xib; sourceTree = "<group>"; };
+		B29E77AA22645B97007DEEC3 /* HMHouseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMHouseListViewModel.swift; sourceTree = "<group>"; };
+		B29E77AD22645E57007DEEC3 /* HMHouseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMHouseListTableViewCell.swift; sourceTree = "<group>"; };
+		B29E77AE22645E57007DEEC3 /* HMHouseListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMHouseListTableViewCell.xib; sourceTree = "<group>"; };
 		B2CBEED1225F226D00BE12F9 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B2CBEED4225F2DDD00BE12F9 /* HMAddEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAddEntryViewModel.swift; sourceTree = "<group>"; };
 		B2CBEED92260653300BE12F9 /* HMPersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMPersonListViewModel.swift; sourceTree = "<group>"; };
@@ -139,7 +145,7 @@
 				B23F339A225DBB5400BC7FB0 /* Storybaord */,
 				B23F3399225DBB4200BC7FB0 /* ViewController */,
 				B2CBEED6225F2DE200BE12F9 /* ViewModel */,
-				B23F33A8225DF74500BC7FB0 /* Views */,
+				B29E77AC22645BAE007DEEC3 /* Views */,
 			);
 			path = "House Management";
 			sourceTree = "<group>";
@@ -192,7 +198,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		B23F33A8225DF74500BC7FB0 /* Views */ = {
+		B29E77AC22645BAE007DEEC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				B23F33AB225DF8D800BC7FB0 /* HMButtonTableViewCell.swift */,
@@ -201,8 +207,11 @@
 				B23F33A5225DF73600BC7FB0 /* HMEntryTableViewCell.xib */,
 				B2CBEEE2226090B200BE12F9 /* HMPersonListTableViewCell.swift */,
 				B2CBEEE3226090B200BE12F9 /* HMPersonListTableViewCell.xib */,
+				B29E77AD22645E57007DEEC3 /* HMHouseListTableViewCell.swift */,
+				B29E77AE22645E57007DEEC3 /* HMHouseListTableViewCell.xib */,
 			);
 			name = Views;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		B2CBEED3225F227500BE12F9 /* CoreData */ = {
@@ -218,6 +227,7 @@
 			children = (
 				B2CBEED4225F2DDD00BE12F9 /* HMAddEntryViewModel.swift */,
 				B2CBEED92260653300BE12F9 /* HMPersonListViewModel.swift */,
+				B29E77AA22645B97007DEEC3 /* HMHouseListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -338,6 +348,7 @@
 			files = (
 				B23F33AE225DF8D800BC7FB0 /* HMButtonTableViewCell.xib in Resources */,
 				B23F3376225DBA3900BC7FB0 /* LaunchScreen.storyboard in Resources */,
+				B29E77B022645E57007DEEC3 /* HMHouseListTableViewCell.xib in Resources */,
 				B23F3373225DBA3900BC7FB0 /* Assets.xcassets in Resources */,
 				B2CBEEE5226090B200BE12F9 /* HMPersonListTableViewCell.xib in Resources */,
 				B23F336E225DBA3800BC7FB0 /* Main.storyboard in Resources */,
@@ -373,10 +384,12 @@
 				B2CBEEDA2260653300BE12F9 /* HMPersonListViewModel.swift in Sources */,
 				B2CBEEE4226090B200BE12F9 /* HMPersonListTableViewCell.swift in Sources */,
 				B23F339D225DC0C400BC7FB0 /* HMTabBarViewController.swift in Sources */,
+				B29E77AF22645E57007DEEC3 /* HMHouseListTableViewCell.swift in Sources */,
 				B23F33AD225DF8D800BC7FB0 /* HMButtonTableViewCell.swift in Sources */,
 				B23F3371225DBA3800BC7FB0 /* House_Management.xcdatamodeld in Sources */,
 				B23F33A1225DC15500BC7FB0 /* HMHouseListViewController.swift in Sources */,
 				B2CBEED5225F2DDD00BE12F9 /* HMAddEntryViewModel.swift in Sources */,
+				B29E77AB22645B97007DEEC3 /* HMHouseListViewModel.swift in Sources */,
 				B23F3369225DBA3800BC7FB0 /* AppDelegate.swift in Sources */,
 				B23F33AA225DF8A500BC7FB0 /* HMConstants.swift in Sources */,
 				B2CBEED2225F226D00BE12F9 /* CoreDataManager.swift in Sources */,

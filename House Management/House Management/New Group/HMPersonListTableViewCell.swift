@@ -14,6 +14,7 @@ class HMPersonListTableViewCell: UITableViewCell {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var mobileLabel: UILabel!
+    @IBOutlet weak var container: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,14 +24,14 @@ class HMPersonListTableViewCell: UITableViewCell {
     private func configureCell() {
         selectionStyle = .none
         
-        //layer.borderWidth = 1.0
-        layer.borderColor = UIColor.lightGray.cgColor
-        layer.cornerRadius = 8
+        container.layer.borderWidth = 1.0
+        container.layer.borderColor = UIColor.lightGray.cgColor
+        container.layer.cornerRadius = 8
         
-        layer.shadowColor = UIColor.darkGray.cgColor
-        layer.shadowOpacity = 0.8
-        layer.shadowOffset = CGSize(width: 8, height: 8)
-        layer.shadowRadius = 8
+        container.layer.shadowColor = UIColor.darkGray.cgColor
+        container.layer.shadowOpacity = 0.4
+        container.layer.shadowOffset = CGSize(width: 5, height: 5)
+        container.layer.shadowRadius = 8
     }
     
     func updateCellRecord(_ person: Person) {

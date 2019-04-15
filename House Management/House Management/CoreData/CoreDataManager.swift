@@ -73,11 +73,14 @@ class CoreDataManager: NSObject {
                 return
             }
             
+            
+            
             house.houseNo = dict[HMConstants.kHouseNo] as? String
             house.address = dict[HMConstants.kAddress] as? String
             house.landmark = dict[HMConstants.kLandmark] as? String
             house.locality = dict[HMConstants.kLocality] as? String
-            house.pincode = dict[HMConstants.kPincode] as! Int32
+            house.pincode = dict[HMConstants.kPincode] as? Int32 ?? 0
+            
         } else {
             guard let entity = NSEntityDescription.entity(forEntityName: "Person", in: context) else {
                 print("Person entity not available")

@@ -74,7 +74,9 @@ extension HMPersonListViewController: UITableViewDataSource, UITableViewDelegate
 //MARK: - Conform to HMAddEntryViewControllerProtocol
 extension HMPersonListViewController: HMAddEntryViewControllerProtocol {
     
-    func didTapSaveBtn() { }
+    func didTapSaveBtn() {
+        loadData()
+    }
     
     func didTapCancelBtn() { }
 }

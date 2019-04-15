@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="BsM-1T-8Kd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WJj-PP-OMv">
+                                <rect key="frame" x="8" y="72" width="359" height="538"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WJj-PP-OMv" firstAttribute="top" secondItem="dSx-2h-Ko0" secondAttribute="top" constant="8" id="2ff-3r-dSZ"/>
+                            <constraint firstItem="WJj-PP-OMv" firstAttribute="leading" secondItem="dSx-2h-Ko0" secondAttribute="leading" constant="8" id="N1p-SE-OLy"/>
+                            <constraint firstItem="dSx-2h-Ko0" firstAttribute="bottom" secondItem="WJj-PP-OMv" secondAttribute="bottom" constant="8" id="PyP-P7-YLw"/>
+                            <constraint firstItem="dSx-2h-Ko0" firstAttribute="trailing" secondItem="WJj-PP-OMv" secondAttribute="trailing" constant="8" id="UHG-YL-T9g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dSx-2h-Ko0"/>
                     </view>
                     <navigationItem key="navigationItem" title="Houses" id="YTH-3o-bYv">
@@ -27,6 +39,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="WJj-PP-OMv" id="e2x-TF-ZBd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMN-QH-QdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,6 +207,6 @@
         <image name="persons" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="feK-Ga-KC7"/>
+        <segue reference="7vf-Da-OKQ"/>
     </inferredMetricsTieBreakers>
 </document>
