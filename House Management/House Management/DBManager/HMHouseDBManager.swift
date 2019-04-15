@@ -15,4 +15,11 @@ class HMHouseDBManager {
             completion(result as? [House])
         }
     }
+    
+    func deleteObject(_ house: House, completion: (Bool)->()) {
+        CoreDataManager.shared.deleteObject(with: .house, object: house) { (isDeleted) in
+            completion(isDeleted)
+        }
+    }
+    
 }

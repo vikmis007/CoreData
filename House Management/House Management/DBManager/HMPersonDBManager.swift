@@ -15,4 +15,10 @@ class HMPersonDBManager {
             completion(result as? [Person])
         }
     }
+    
+    func deleteObject(_ person: Person, completion: (Bool)->()) {
+        CoreDataManager.shared.deleteObject(with: .person, object: person) { (isDeleted) in
+            completion(isDeleted)
+        }
+    }
 }

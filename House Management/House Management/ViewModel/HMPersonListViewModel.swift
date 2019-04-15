@@ -25,4 +25,10 @@ class HMPersonListViewModel {
         }
     }
     
+    func deleteObjectFromDB(_ person: Person, compeletion: (Bool)->()) {
+        dbManager.deleteObject(person) { (isDeleted) in
+            compeletion(isDeleted)
+        }
+    }
+    
 }

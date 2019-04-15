@@ -69,6 +69,18 @@ extension HMPersonListViewController: UITableViewDataSource, UITableViewDelegate
         
         return cell
     }
+    
+    
+    //TODO: - Needs to be completed
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let person = viewModel.aPerson[indexPath.row]
+            viewModel.deleteObjectFromDB(person) { (isDeleted) in
+                loadData()
+            }
+        }
+    }
+    
 }
 
 //MARK: - Conform to HMAddEntryViewControllerProtocol

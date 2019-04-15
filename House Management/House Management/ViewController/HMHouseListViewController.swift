@@ -68,6 +68,15 @@ extension HMHouseListViewController: UITableViewDataSource, UITableViewDelegate 
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let house = viewModel.aHouse[indexPath.row]
+            viewModel.deleteObjectFromDB(house) { (isDeleted) in
+                loadData()
+            }
+        }
+    }
 }
 
 /// COnform to HMAddEntryViewControllerProtocol

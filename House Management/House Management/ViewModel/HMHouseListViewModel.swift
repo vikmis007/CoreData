@@ -23,4 +23,10 @@ class HMHouseListViewModel {
             completion()
         }
     }
+    
+    func deleteObjectFromDB(_ house: House, completion: (Bool)->()) {
+        dbManager.deleteObject(house) { (isDeleted) in
+            completion(isDeleted)
+        }
+    }
 }

@@ -27,6 +27,27 @@ class CoreDataManager: NSObject {
         return manager
     }
     
+    //MARK: - Method to delete data to DB
+    func deleteObject(with type: HMDBEntityEnum, object: Any, completion: (Bool)->()) {
+        
+        guard let context = managedObjectContext else {
+            print("Context is not available")
+            return
+        }
+        
+        if type == .person {
+            if let obj = object as? Person {
+                context.delete(obj)
+            }
+        } else {
+            if let obj = object as? House {
+                context.delete(obj)
+            }
+        }
+        saveContext()
+        completion(true)
+    }
+    
     //MARK: - Methods to fetch data to DB
     func fetchDataFromDB(from entity: HMDBEntityEnum, completion: ([NSManagedObject])->()) {
         
@@ -98,6 +119,10 @@ class CoreDataManager: NSObject {
             person.mobile = dict[HMConstants.kMobile] as? String
         }
         
+        saveContext()
+    }
+    
+    private func saveContext() {
         do {
             try managedObjectContext?.save()
         } catch {
