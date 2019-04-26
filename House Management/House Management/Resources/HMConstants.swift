@@ -43,4 +43,8 @@ struct HMConstants {
     ///Segue constants
     static let kHouseListToAddHouseIdentifier = "HouseListToAddHouseIdentifier"
     static let kPersonListToAddPersonIdentifier = "PersonListToAddPersonIdentifier"
+    
+    ///Storyboard name
+    static let kMainStoryboardName = "Main"
+    static let kLaunchStoryboardName = "LaunchScreen"
 }

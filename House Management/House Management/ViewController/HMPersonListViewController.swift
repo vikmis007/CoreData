@@ -11,6 +11,8 @@ import UIKit
 let PERSON_LIST_TABLE_VIEW_CELL = "HMPersonListTableViewCell"
 let PERSON_LIST_TABLE_VIEW_CELL_IDENTIFIER = "HMPersonListTableViewCellIdentifier"
 
+let PERSON_DETAIL_VIEW_CONTROLLER_IDENTIFIER = "HMPersonDetailViewControllerIdentifier"
+
 
 class HMPersonListViewController: UIViewController {
 
@@ -79,6 +81,14 @@ extension HMPersonListViewController: UITableViewDataSource, UITableViewDelegate
                 loadData()
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mainStorybaord = UIStoryboard(name: HMConstants.kMainStoryboardName, bundle: nil)
+        guard let personDetailVC: HMPersonDetailViewController = mainStorybaord.instantiateViewController(withIdentifier: PERSON_DETAIL_VIEW_CONTROLLER_IDENTIFIER) as? HMPersonDetailViewController else { return }
+        personDetailVC.person = viewModel.aPerson[indexPath.row]
+        
+        navigationController?.show(personDetailVC, sender: nil)
     }
     
 }

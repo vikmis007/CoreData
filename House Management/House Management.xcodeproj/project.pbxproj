@@ -34,6 +34,8 @@
 		B2CBEEE122607CDA00BE12F9 /* HMAddEntryDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEEE022607CDA00BE12F9 /* HMAddEntryDBManager.swift */; };
 		B2CBEEE4226090B200BE12F9 /* HMPersonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBEEE2226090B200BE12F9 /* HMPersonListTableViewCell.swift */; };
 		B2CBEEE5226090B200BE12F9 /* HMPersonListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2CBEEE3226090B200BE12F9 /* HMPersonListTableViewCell.xib */; };
+		B2D6C31522702D30005D0617 /* HMPersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D6C31422702D30005D0617 /* HMPersonDetailViewController.swift */; };
+		B2D6C31722702EF5005D0617 /* HMPersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D6C31622702EF5005D0617 /* HMPersonDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		B2CBEEE022607CDA00BE12F9 /* HMAddEntryDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMAddEntryDBManager.swift; sourceTree = "<group>"; };
 		B2CBEEE2226090B200BE12F9 /* HMPersonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMPersonListTableViewCell.swift; sourceTree = "<group>"; };
 		B2CBEEE3226090B200BE12F9 /* HMPersonListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMPersonListTableViewCell.xib; sourceTree = "<group>"; };
+		B2D6C31422702D30005D0617 /* HMPersonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMPersonDetailViewController.swift; sourceTree = "<group>"; };
+		B2D6C31622702EF5005D0617 /* HMPersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMPersonDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 				B23F339E225DC14500BC7FB0 /* HMPersonListViewController.swift */,
 				B23F33A0225DC15500BC7FB0 /* HMHouseListViewController.swift */,
 				B23F33A2225DF0FD00BC7FB0 /* HMAddEntryViewController.swift */,
+				B2D6C31422702D30005D0617 /* HMPersonDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				B2CBEED4225F2DDD00BE12F9 /* HMAddEntryViewModel.swift */,
 				B2CBEED92260653300BE12F9 /* HMPersonListViewModel.swift */,
 				B29E77AA22645B97007DEEC3 /* HMHouseListViewModel.swift */,
+				B2D6C31622702EF5005D0617 /* HMPersonDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -391,6 +397,8 @@
 				B2CBEED5225F2DDD00BE12F9 /* HMAddEntryViewModel.swift in Sources */,
 				B29E77AB22645B97007DEEC3 /* HMHouseListViewModel.swift in Sources */,
 				B23F3369225DBA3800BC7FB0 /* AppDelegate.swift in Sources */,
+				B2D6C31522702D30005D0617 /* HMPersonDetailViewController.swift in Sources */,
+				B2D6C31722702EF5005D0617 /* HMPersonDetailViewModel.swift in Sources */,
 				B23F33AA225DF8A500BC7FB0 /* HMConstants.swift in Sources */,
 				B2CBEED2225F226D00BE12F9 /* CoreDataManager.swift in Sources */,
 				B2CBEEE122607CDA00BE12F9 /* HMAddEntryDBManager.swift in Sources */,
