@@ -80,6 +80,10 @@ extension HMEntryTableViewCell {
         }
     }
     
+    func setUpAllotHouseCell(with indexPath: IndexPath?) {
+        
+    }
+    
     func setupAddHouseEntryCell(with indexPath: IndexPath?) {
         guard let index = indexPath else { return }
         

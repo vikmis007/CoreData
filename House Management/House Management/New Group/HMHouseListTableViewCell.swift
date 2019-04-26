@@ -17,6 +17,7 @@ class HMHouseListTableViewCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var landmarkLabel: UILabel!
     @IBOutlet weak var localityLabel: UILabel!
+    @IBOutlet weak var selectedStatuBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +27,7 @@ class HMHouseListTableViewCell: UITableViewCell {
     
     private func configureCell() {
         selectionStyle = .none
+        selectedStatuBtn.isUserInteractionEnabled = false
         
         container.layer.borderColor = UIColor.lightGray.cgColor
         container.layer.borderWidth = 1.0
@@ -37,12 +39,22 @@ class HMHouseListTableViewCell: UITableViewCell {
         container.layer.shadowRadius = 8.0
     }
     
-    func updateHouseRecord(_ house: House) {
+    func updateHouseRecord(_ house: House, source: HouseListSourceController?) {
         houseNoLabel.text = house.houseNo
         pincodeLabel.text = String(house.pincode)
         addressLabel.text = house.address
         landmarkLabel.text = house.landmark
         localityLabel.text = house.locality
+        
+        if source == .allocate_house {
+            selectedStatuBtn.isHidden = false
+        } else {
+            selectedStatuBtn.isHidden = true
+        }
+    }
+    
+    func toggleStatusForSelectedButton() {
+        selectedStatuBtn.isSelected = !selectedStatuBtn.isSelected
     }
     
 }

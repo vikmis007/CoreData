@@ -13,7 +13,7 @@
         <!--Houses-->
         <scene sceneID="NSk-k0-pCM">
             <objects>
-                <viewController id="lds-ph-Ygv" customClass="HMHouseListViewController" customModule="House_Management" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HMHouseListViewControllerIdentifier" id="lds-ph-Ygv" customClass="HMHouseListViewController" customModule="House_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BsM-1T-8Kd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,6 +22,19 @@
                                 <rect key="frame" x="8" y="72" width="359" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s08-vB-5pT">
+                                <rect key="frame" x="8" y="573" width="359" height="40"/>
+                                <color key="backgroundColor" red="0.15012711140000001" green="0.82617220430000005" blue="0.98953610749999998" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ms3-jj-Hrc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveBtnTapped:" destination="lds-ph-Ygv" eventType="touchUpInside" id="qKc-il-Xnf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -29,6 +42,9 @@
                             <constraint firstItem="WJj-PP-OMv" firstAttribute="leading" secondItem="dSx-2h-Ko0" secondAttribute="leading" constant="8" id="N1p-SE-OLy"/>
                             <constraint firstItem="dSx-2h-Ko0" firstAttribute="bottom" secondItem="WJj-PP-OMv" secondAttribute="bottom" constant="8" id="PyP-P7-YLw"/>
                             <constraint firstItem="dSx-2h-Ko0" firstAttribute="trailing" secondItem="WJj-PP-OMv" secondAttribute="trailing" constant="8" id="UHG-YL-T9g"/>
+                            <constraint firstItem="s08-vB-5pT" firstAttribute="leading" secondItem="WJj-PP-OMv" secondAttribute="leading" id="ct1-3E-adx"/>
+                            <constraint firstItem="dSx-2h-Ko0" firstAttribute="bottom" secondItem="s08-vB-5pT" secondAttribute="bottom" constant="5" id="mJ0-A0-jNF"/>
+                            <constraint firstItem="s08-vB-5pT" firstAttribute="trailing" secondItem="WJj-PP-OMv" secondAttribute="trailing" id="woa-W6-69Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dSx-2h-Ko0"/>
                     </view>
@@ -40,6 +56,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="saveBtn" destination="s08-vB-5pT" id="BI7-LJ-rKi"/>
                         <outlet property="tableView" destination="WJj-PP-OMv" id="e2x-TF-ZBd"/>
                     </connections>
                 </viewController>
@@ -309,6 +326,9 @@
                                 <state key="normal" title="Tap to see alotted houses">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="showAllocatedHouseBtnTapped:" destination="GAI-Nh-oAo" eventType="touchUpInside" id="sVz-y7-BiY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -427,6 +447,6 @@
         <image name="persons" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="feK-Ga-KC7"/>
+        <segue reference="7vf-Da-OKQ"/>
     </inferredMetricsTieBreakers>
 </document>

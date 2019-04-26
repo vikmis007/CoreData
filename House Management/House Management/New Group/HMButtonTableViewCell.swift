@@ -10,6 +10,8 @@ import UIKit
 
 class HMButtonTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var customBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

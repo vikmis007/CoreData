@@ -13,6 +13,10 @@ let ENTRY_TABLE_VIEW_CELL_IDENTIFIER = "HMEntryTableViewCellIdentifier"
 let BUTTON_TABLE_VIEW_CELL = "HMButtonTableViewCell"
 let BUTTON_TABLE_VIEW_CELL_IDENTIFIER = "HMButtonTableViewCellIdentifier"
 
+let HOUSE_LIST_CONTROLLER_IDENTIFIER = "HMHouseListViewControllerIdentifier"
+
+let ALLOCATE_HOUSE_BTN_TEXT = "Allocate House"
+
 
 enum AddEntrySourceViewControllerEnum: String{
     case person
@@ -73,6 +77,14 @@ class HMAddEntryViewController: UIViewController {
         }
     }
     
+    @objc func allocateHouseBtnTapped() {
+        let storyboard = UIStoryboard(name: HMConstants.kMainStoryboardName, bundle: nil)
+        let houseListVC: HMHouseListViewController = storyboard.instantiateViewController(withIdentifier: HOUSE_LIST_CONTROLLER_IDENTIFIER) as! HMHouseListViewController
+        houseListVC.source = .allocate_house
+        houseListVC.delegate = self
+        self.present(houseListVC, animated: true, completion: nil)
+    }
+    
     //MARK: - Private helper methods
     private func configureTableView() {
         tableView.dataSource = self
@@ -96,6 +108,10 @@ class HMAddEntryViewController: UIViewController {
         }
     }
     
+    private func updateAllocatedHouse(house: House) {
+        viewModel.personDict[HMConstants.kHouse] = house
+    }
+    
     private func updateHouseDict(tag: Int, text: String) {
         switch tag {
         case 1:
@@ -116,6 +132,13 @@ class HMAddEntryViewController: UIViewController {
     
 }
 
+//MARK: - HMHouseListController delegate methods
+extension HMAddEntryViewController: HMHouseListControllerProtocol {
+    func didSelectHouse(_ house: House) {
+        updateAllocatedHouse(house: house)
+    }
+}
+
 //MARK: - HMEntryTableViewCell delegate methods
 extension HMAddEntryViewController: HMEntryTableViewCellProtocol {
     func textfieldDidChangeTextFor(tag: Int, text: String) {
@@ -133,7 +156,7 @@ extension HMAddEntryViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch sourceController {
         case .person?:
-            return 4
+            return 5
         case .house?:
             return 5
         default:
@@ -142,17 +165,27 @@ extension HMAddEntryViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: HMEntryTableViewCell = tableView.dequeueReusableCell(withIdentifier: ENTRY_TABLE_VIEW_CELL_IDENTIFIER) as? HMEntryTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.delegate = self
-        if(sourceController == .person) {
-           cell.setupAddPersonEntryCell(with: indexPath)
+        if(sourceController == .person && indexPath.row == 4) {
+            guard let cell: HMButtonTableViewCell = tableView.dequeueReusableCell(withIdentifier: BUTTON_TABLE_VIEW_CELL_IDENTIFIER) as? HMButtonTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.customBtn.setTitle(ALLOCATE_HOUSE_BTN_TEXT, for: .normal)
+            cell.customBtn.addTarget(self, action: #selector(allocateHouseBtnTapped), for: .touchUpInside)
+            return cell
+            
         } else {
-            cell.setupAddHouseEntryCell(with: indexPath)
+            guard let cell: HMEntryTableViewCell = tableView.dequeueReusableCell(withIdentifier: ENTRY_TABLE_VIEW_CELL_IDENTIFIER) as? HMEntryTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.delegate = self
+            if(sourceController == .person) {
+                cell.setupAddPersonEntryCell(with: indexPath)
+            } else {
+                cell.setupAddHouseEntryCell(with: indexPath)
+            }
+            
+            return cell
         }
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

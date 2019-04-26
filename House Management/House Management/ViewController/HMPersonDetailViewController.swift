@@ -30,6 +30,14 @@ class HMPersonDetailViewController: UIViewController {
         initialSetup()
     }
     
+    //MAR: - IBActions goes here
+    @IBAction func showAllocatedHouseBtnTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: HMConstants.kMainStoryboardName, bundle: nil)
+        let houseListVC: HMHouseListViewController = storyboard.instantiateViewController(withIdentifier: HOUSE_LIST_CONTROLLER_IDENTIFIER) as! HMHouseListViewController
+        houseListVC.source = .allocated_house
+        houseListVC.house = viewModel.person?.house
+        navigationController?.show(houseListVC, sender: nil)
+    }
     //Initial setup for view controller
     func initialSetup() {
         

@@ -6,15 +6,17 @@
         <attribute name="landmark" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="locality" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pincode" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="house" inverseEntity="Person" syncable="YES"/>
     </entity>
     <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
         <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="house" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="House" inverseName="owner" inverseEntity="House" syncable="YES"/>
     </entity>
     <elements>
-        <element name="House" positionX="-54" positionY="-18" width="128" height="120"/>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="House" positionX="-54" positionY="-18" width="128" height="135"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="120"/>
     </elements>
 </model>

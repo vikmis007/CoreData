@@ -27,6 +27,7 @@ class CoreDataManager: NSObject {
         return manager
     }
     
+    
     //MARK: - Method to delete data to DB
     func deleteObject(with type: HMDBEntityEnum, object: Any, completion: (Bool)->()) {
         
@@ -117,6 +118,7 @@ class CoreDataManager: NSObject {
             person.age = dict[HMConstants.kAge] as! Int32
             person.email = dict[HMConstants.kEmail] as? String
             person.mobile = dict[HMConstants.kMobile] as? String
+            person.house = dict[HMConstants.kHouse] as? House
         }
         
         saveContext()
