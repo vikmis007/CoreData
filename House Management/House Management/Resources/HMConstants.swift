@@ -48,4 +48,21 @@ struct HMConstants {
     ///Storyboard name
     static let kMainStoryboardName = "Main"
     static let kLaunchStoryboardName = "LaunchScreen"
+    
+    //Alert button constant
+    static let kOKTitle = "OK"
+    
+    ///Validation Error messages
+    static let kNameFieldEmptyMessage = "Name can't be empty!!"
+    static let kAgeFieldEmptyMessage = "Age can't be empty!!"
+    static let kAgeFieldInvalidMessage = "Invalid Age !!"
+    static let kEmailFieldEmptyMessage = "Email can't be empty!!"
+    static let kContactFieldEmptyMessage = "Contact can't be empty!!"
+    
+    static let kHouseNoEmptyMessage = "House No can't be empty!!"
+    static let kAddressEmptyMessage = "Address can't be empty!!"
+    static let kLocalityEmptyMessage = "Locality can't be empty!!"
+    static let kPincodeEmptyMessage = "Pincode can't be empty!!"
+    static let kPincodeInvalidMessage = "Invalid Pincode!!"
+    
 }

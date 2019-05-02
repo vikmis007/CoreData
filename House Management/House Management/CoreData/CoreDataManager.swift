@@ -101,7 +101,11 @@ class CoreDataManager: NSObject {
             house.address = dict[HMConstants.kAddress] as? String
             house.landmark = dict[HMConstants.kLandmark] as? String
             house.locality = dict[HMConstants.kLocality] as? String
-            house.pincode = dict[HMConstants.kPincode] as? Int32 ?? 0
+            if let str = dict[HMConstants.kPincode] as? String, let i = Int32(str) {
+                house.pincode = i
+            } else {
+                house.pincode = 0
+            }
             
         } else {
             guard let entity = NSEntityDescription.entity(forEntityName: "Person", in: context) else {
@@ -114,8 +118,15 @@ class CoreDataManager: NSObject {
                 return
             }
             
+            
             person.name = dict[HMConstants.kName] as? String
-            person.age = dict[HMConstants.kAge] as! Int32
+            
+            if let str = dict[HMConstants.kAge] as? String, let i = Int32(str) {
+                person.age = i
+            } else {
+                person.age = 0
+            }
+            
             person.email = dict[HMConstants.kEmail] as? String
             person.mobile = dict[HMConstants.kMobile] as? String
             person.house = dict[HMConstants.kHouse] as? House

@@ -46,6 +46,13 @@ class HMPersonListViewController: UIViewController {
         tableView.register(UINib(nibName: PERSON_LIST_TABLE_VIEW_CELL, bundle: nil), forCellReuseIdentifier: PERSON_LIST_TABLE_VIEW_CELL_IDENTIFIER)
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let imageView = UIImageView(frame: view.frame)
+        imageView.image = UIImage(named: "person_bg")
+        imageView.layer.opacity = 0.4
+        view.addSubview(imageView)
+        view.bringSubviewToFront(tableView)
+        tableView.backgroundColor = UIColor.clear
     }
     
     func loadData() {

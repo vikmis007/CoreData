@@ -32,6 +32,8 @@ class HMPersonListTableViewCell: UITableViewCell {
         container.layer.shadowOpacity = 0.4
         container.layer.shadowOffset = CGSize(width: 5, height: 5)
         container.layer.shadowRadius = 8
+        
+       backgroundColor = UIColor.clear
     }
     
     func updateCellRecord(_ person: Person) {

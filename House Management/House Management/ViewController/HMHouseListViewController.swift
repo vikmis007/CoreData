@@ -79,6 +79,14 @@ class HMHouseListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: HOUSE_LIST_TABLE_VIEW_CELL, bundle: nil), forCellReuseIdentifier: HOUSE_LIST_TABLE_VIEW_CELL_IDENTIFIER)
+        
+        let imageView = UIImageView(frame: view.frame)
+        imageView.image = UIImage(named: "house_bg")
+        imageView.layer.opacity = 0.4
+        view.addSubview(imageView)
+        view.bringSubviewToFront(tableView)
+        view.bringSubviewToFront(saveBtn)
+        tableView.backgroundColor = UIColor.clear
     }
     
     //MARK: - Private helper methods

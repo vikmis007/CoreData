@@ -56,15 +56,17 @@ class HMAddEntryViewController: UIViewController {
         view.endEditing(true)
         
         if sourceController == .person {
-            viewModel.savePersonData()
+            if validatePersonData() {
+                viewModel.savePersonData()
+                delegate?.didTapSaveBtn()
+                self.dismiss(animated: true, completion: nil)
+            }
         } else {
-            viewModel.saveHouseData()
-        }
-        
-        delegate?.didTapSaveBtn()
-        
-        defer {
-            self.dismiss(animated: true, completion: nil)
+            if validateHouseData() {
+                viewModel.saveHouseData()
+                delegate?.didTapSaveBtn()
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
@@ -91,6 +93,72 @@ class HMAddEntryViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: ENTRY_TABLE_VIEW_CELL, bundle: nil), forCellReuseIdentifier: ENTRY_TABLE_VIEW_CELL_IDENTIFIER)
         tableView.register(UINib(nibName: BUTTON_TABLE_VIEW_CELL, bundle: nil), forCellReuseIdentifier: BUTTON_TABLE_VIEW_CELL_IDENTIFIER)
+        
+        let imageView = UIImageView(frame: view.frame)
+        imageView.image = UIImage(named: "add_entry_bg")
+        imageView.layer.opacity = 0.4
+        view.addSubview(imageView)
+        view.bringSubviewToFront(tableView)
+        tableView.backgroundColor = UIColor.clear
+    }
+    
+    private func validatePersonData() -> Bool {
+        if viewModel.personDict[HMConstants.kName] == nil || (viewModel.personDict[HMConstants.kName] as? String) == "" {
+            showError(with: "", message: HMConstants.kNameFieldEmptyMessage)
+            return false
+        } else if viewModel.personDict[HMConstants.kAge] == nil || (viewModel.personDict[HMConstants.kAge] as? String) == "" {
+            showError(with: "", message: HMConstants.kAgeFieldEmptyMessage)
+            return false
+        } else if viewModel.personDict[HMConstants.kEmail] == nil ||  (viewModel.personDict[HMConstants.kEmail] as? String) == "" {
+            showError(with: "", message: HMConstants.kEmailFieldEmptyMessage)
+            return false
+        } else if viewModel.personDict[HMConstants.kMobile] == nil || (viewModel.personDict[HMConstants.kMobile] as? String) == "" {
+            showError(with: "", message: HMConstants.kContactFieldEmptyMessage)
+            return false
+        }
+        return true
+    }
+    
+    private func validateHouseData() -> Bool {
+        if viewModel.houseDict[HMConstants.kHouseNo] == nil || (viewModel.houseDict[HMConstants.kHouseNo] as? String) == "" {
+            showError(with: "", message: HMConstants.kHouseNoEmptyMessage)
+            return false
+        } else if viewModel.houseDict[HMConstants.kAddress] == nil || (viewModel.houseDict[HMConstants.kAddress] as? String) == "" {
+            showError(with: "", message: HMConstants.kAddressEmptyMessage)
+            return false
+        } else if viewModel.houseDict[HMConstants.kLocality] == nil ||  (viewModel.houseDict[HMConstants.kLocality] as? String) == "" {
+            showError(with: "", message: HMConstants.kLocalityEmptyMessage)
+            return false
+        } else if viewModel.houseDict[HMConstants.kPincode] == nil || (viewModel.houseDict[HMConstants.kPincode] as? String) == "" {
+            showError(with: "", message: HMConstants.kPincodeEmptyMessage)
+            return false
+        }
+        return true
+        
+        
+        
+        
+        if viewModel.houseDict[HMConstants.kHouseNo] == nil {
+            showError(with: "", message: HMConstants.kHouseNoEmptyMessage)
+            return false
+        } else if viewModel.houseDict[HMConstants.kAddress] == nil {
+            showError(with: "", message: HMConstants.kAddressEmptyMessage)
+            return false
+        } else if viewModel.houseDict[HMConstants.kLocality] == nil {
+            showError(with: "", message: HMConstants.kLocalityEmptyMessage)
+            return false
+        } else if viewModel.houseDict[HMConstants.kPincode] == nil {
+            showError(with: "", message: HMConstants.kPincodeEmptyMessage)
+            return false
+        }
+        return true
+    }
+    
+    private func showError(with title: String?, message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: HMConstants.kOKTitle, style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func updatePersonDict(tag: Int, text: String) {
@@ -98,7 +166,7 @@ class HMAddEntryViewController: UIViewController {
         case 1:
             viewModel.personDict[HMConstants.kName] = text
         case 2:
-            viewModel.personDict[HMConstants.kAge] = Int32(text) ?? 0
+            viewModel.personDict[HMConstants.kAge] = text
         case 3:
             viewModel.personDict[HMConstants.kEmail] = text
         case 4:
@@ -123,7 +191,7 @@ class HMAddEntryViewController: UIViewController {
         case 4:
             viewModel.houseDict[HMConstants.kLocality] = text
         case 5:
-            viewModel.houseDict[HMConstants.kPincode] = Int32(text)
+            viewModel.houseDict[HMConstants.kPincode] = text
         default:
             return
         }

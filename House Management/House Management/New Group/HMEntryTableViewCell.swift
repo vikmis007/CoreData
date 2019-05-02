@@ -50,6 +50,8 @@ class HMEntryTableViewCell: UITableViewCell {
         entryTextfield.delegate = self
         entryTextfield.autocorrectionType = .no
         entryTextfield.tag = tag
+        
+        backgroundColor = UIColor.clear
     }
     
 }

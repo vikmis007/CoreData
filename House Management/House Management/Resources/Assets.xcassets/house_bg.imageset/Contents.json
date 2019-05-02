@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "cropped-Apps-Home-icon.png",
+      "filename" : "Blue-house-on-sea.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cropped-Apps-Home-icon-1.png",
+      "filename" : "Blue-house-on-sea-1.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cropped-Apps-Home-icon-2.png",
+      "filename" : "Blue-house-on-sea-2.jpg",
       "scale" : "3x"
     }
   ],

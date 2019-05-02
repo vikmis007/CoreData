@@ -37,6 +37,8 @@ class HMHouseListTableViewCell: UITableViewCell {
         container.layer.shadowOpacity = 0.4
         container.layer.shadowOffset = CGSize(width: 5, height: 5)
         container.layer.shadowRadius = 8.0
+        
+        backgroundColor = UIColor.clear
     }
     
     func updateHouseRecord(_ house: House, source: HouseListSourceController?) {
